@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+	<div class="col-6 text-center offset-md-3" >
+		<img src="{{baseUrl('memes/')}}{{data[1]['name']}}" alt="GENERATE IMAGE">
+	</div>
+</div>
+
+<div class="row justify-content-center"><h3>Download or share your Meme ;)</h3></div>
+<div class="row justify-content-center">
+	<div class="col-6 text-center" >
+
+
+		<a class="btn btn-danger btn-lg" href="{{baseUrl('memes/')}}{{data[1]['name']}}" download="{{data[1]['name']}}">Download</a>
+		<button type="submit" class="btn btn-danger btn-lg" onclick="window.open('{{baseUrl('memes/')}}{{data[1]['name']}}')">Open Image</button>
+
+		<!-- Générer le liens !-->
+	
+
+		<div id="void">
+			<a href="https://www.facebook.com/sharer/sharer.php?u={{baseUrl('memes/')}}{{data[1]['name']}}"><img class="share" src="{{baseUrl('assets/icon/button-share-facebook-white.png')}}" height="50"></a> 
+
+			<a href="https://twitter.com/home?status={{baseUrl('memes/')}}{{data[1]['name']}}"><img 
+			class="share" src="{{baseUrl('assets/icon/button-share-twitter1.png')}}" height="50""></a> 
+
+		</div>
+	</div>
+</div>
+
+		{% endblock %}

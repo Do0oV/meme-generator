@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row justify-content-center">
+
+	<form method="POST">
+		<div class="btn-group d-none d-md-block" role="group">
+			<button name="categorie" class="btn btn-info" value="angry">Angry</button>
+			<button name="categorie" class="btn btn-info" value="desperate">Desperate</button>
+			<button name="categorie" class="btn btn-info" value="happy">Happy</button>
+			<button name="categorie" class="btn btn-info" value="loving">Loving</button>
+			<button name="categorie" class="btn btn-info" value="out">Out</button>
+			<button name="categorie" class="btn btn-info" value="sad">Sad</button>
+			<button name="categorie" class="btn btn-info" value="scared">Scared</button>
+			<button name="categorie" class="btn btn-info" value="shocked">Shocked</button>
+			<button name="categorie" class="btn btn-info" value="tired">Tired</button>
+		</div>
+
+		<div class="d-md-none">
+			<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+				<div class="btn-group" role="group" aria-label="First group">
+					<button name="categorie" class="btn btn-info" value="angry">Angry</button>
+					<button name="categorie" class="btn btn-info" value="sad">Sad</button>
+					<button name="categorie" class="btn btn-info" value="happy">Happy</button>
+					<button name="categorie" class="btn btn-info" value="loving">Loving</button>
+					<button name="categorie" class="btn btn-info" value="out">Out</button>
+				</div>
+			</div>
+			<div class="btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+				<div class="btn-group" role="group" aria-label="Second group">
+					<button name="categorie" class="btn btn-info" value="desperate">Desperate</button>
+					<button name="categorie" class="btn btn-info" value="scared">Scared</button>
+					<button name="categorie" class="btn btn-info" value="shocked">Shocked</button>
+					<button name="categorie" class="btn btn-info" value="tired">Tired</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</form>
+<div class="row justify-content-center"><h3>Select an image</h3></div>
+
+<div class="row">
+	<div class="card-columns">
+		{% for image in data %}
+
+		<div class="card">
+			<a href="{{baseUrl('image/')}}{{image.filename}}"><img class="card-img-top img-fluid" src="{{ baseUrl('assets/img/') }}{{ image.filename }}"></a>
+		</div>   
+
+		{% endfor %}
+	</div>
+</div>
+{% endblock %}
+
+
+
+
+
